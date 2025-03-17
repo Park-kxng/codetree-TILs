@@ -1,35 +1,7 @@
-let inputLine = readLine()!
-let n = Int(inputLine)!
+if let inputLine = readLine(), let n = Int(inputLine) {
+    let isEven = (n % 2 == 0)
+    let digitSum = String(n).reduce(0) { $0 + Int(String($1))! }
+    let isSumMultipleOf5 = (digitSum % 5 == 0)
 
-func isEven(_ num: Int) -> Bool {
-    if num % 2 == 0 {
-        return true
-    } else {
-        return false
-    }
+    print(isEven && isSumMultipleOf5 ? "Yes" : "No")
 }
-
-func isSumMultiplesOf5 (_ num: Int) -> Bool {
-    var sum = 0
-    for chr in String(num){
-        if let curr = Int(String(chr)) {
-            sum += curr
-        }
-    }
-
-    if sum % 5 == 0 {
-        return true
-    } else {
-        return false
-    }
-}
-
-func solution(_ num: Int) {
-    if isEven(num) && isSumMultiplesOf5(num) {
-        print("Yes")
-    } else {
-        print("No")
-    }
-}
-
-solution(n)

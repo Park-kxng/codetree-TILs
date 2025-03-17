@@ -29,7 +29,7 @@ func solution (y: Int, m: Int, d: Int) {
 
     // 윤년인지 파악 후 존재하는 날짜인지 파악
     if m == 2 {
-        if !isLeapYear(y) && d == 29 {
+        if (!isLeapYear(y) && d > 28) || (isLeapYear(y) && d > 29) {
             print(notExist)
             return   
         } 

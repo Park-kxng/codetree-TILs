@@ -7,7 +7,7 @@ let d = inputValues[2]
 func isLeapYear(_ y: Int) -> Bool {
     if y % 4 == 0 {
         if y % 100 == 0 {
-            if if y % 400 == 0 {
+            if y % 400 == 0 {
                 return true
             } else {
                 return false
